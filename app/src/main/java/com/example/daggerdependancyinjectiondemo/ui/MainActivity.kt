@@ -7,7 +7,7 @@ import com.example.daggerdependancyinjectiondemo.R
 import com.example.daggerdependancyinjectiondemo.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

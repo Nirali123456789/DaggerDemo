@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+  >
+
+    <ImageView
+        android:id="@+id/img_start_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="15dp"
+        android:src="@mipmap/ic_launcher_round"
+        app:layout_constraintBottom_toTopOf="@id/txt_start_title_s"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.example.daggerdependancyinjectiondemo.ui.MessagesTextView
+        android:id="@+id/txt_start_title_s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/textcolor1"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/chkByClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="5sp"
+        android:backgroundTint="@color/bg"
+        android:gravity="start"
+        android:lineSpacingExtra="3sp"
+        android:paddingStart="3dp"
+        android:text="@string/by_taaping"
+        android:textColor="@color/textcolor2"
+        android:textSize="13sp"
+        android:visibility="visible"
+        android:button="@drawable/check"
+        app:layout_constraintBottom_toTopOf="@+id/btn_get_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.example.daggerdependancyinjectiondemo.ui.MessagesTextView
+        android:id="@+id/txt_start_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:text="@string/privacy_policy"
+        android:textColor="@color/textcolor1"
+        android:textSize="10sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/btn_get_start"
+        app:layout_constraintStart_toStartOf="@id/chkByClick"
+        android:layout_marginStart="30sp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_get_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50sp"
+        android:background="@drawable/button_continue"
+        android:text="@string/button_continue"
+        android:textColor="@color/white"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

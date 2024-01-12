@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">DaggerDependancyInjectionDemo</string>
+    <string name="by_taaping">By tapping continue, you indicate that you have read our</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="button_continue">Continue</string>
 </resources>

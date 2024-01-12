@@ -7,8 +7,17 @@
 package com.example.daggerdependancyinjectiondemo
 
 import android.app.Application
+import com.example.daggerdependancyinjectiondemo.prefs.Prefs
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class MyApp:Application() {
+    companion object {
+        var prefs1: Prefs? = null
+        lateinit var instance: MyApp
+    }
+    override fun onCreate() {
+        super.onCreate()
+        prefs1 = Prefs(applicationContext)
+    }
 }

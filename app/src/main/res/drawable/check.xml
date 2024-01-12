@@ -1,0 +1,27 @@
+<!-- res/drawable/custom_checkbox.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Checked state -->
+    <item android:state_checked="true">
+        <layer-list>
+            <!-- Background -->
+            <item android:drawable="@drawable/ic_unchecked" />
+
+            <!-- Check mark -->
+            <item
+                android:width="16dp"
+                android:height="16dp"
+                android:drawable="@drawable/ic_check"
+                android:gravity="center" />
+        </layer-list>
+    </item>
+
+    <!-- Unchecked state -->
+    <item android:state_checked="false">
+        <layer-list>
+            <!-- Background -->
+            <item android:drawable="@drawable/ic_unchecked" />
+
+            <!-- No check mark for unchecked state -->
+        </layer-list>
+    </item>
+</selector>
