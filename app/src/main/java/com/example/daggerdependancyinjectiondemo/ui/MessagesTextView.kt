@@ -11,8 +11,7 @@ open class MessagesTextView @JvmOverloads  constructor(
     context: Context, attrs: AttributeSet? = null,  defStyleAttr: Int = 0
 ) : EmojiTextView(context, attrs,defStyleAttr) {
 
-    @Inject
-    lateinit var textViewStyler: TextViewStyler
+
     var collapseEnabled: Boolean = false
 
     @Inject

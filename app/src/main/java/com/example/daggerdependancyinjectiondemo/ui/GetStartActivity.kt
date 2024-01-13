@@ -14,13 +14,17 @@ import androidx.core.content.ContextCompat
 import com.example.daggerdependancyinjectiondemo.R
 import com.example.daggerdependancyinjectiondemo.databinding.ActivityGetStartBinding
 import com.example.daggerdependancyinjectiondemo.prefs.Prefs.Companion.PRIVACY_POLICY_LINK
+import com.example.daggerdependancyinjectiondemo.service.UserService
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class GetStartActivity : BaseActivity<ActivityGetStartBinding>(),
     CompoundButton.OnCheckedChangeListener,
     View.OnClickListener {
 
+    @Inject
+    lateinit var userService: UserService
     private var btn_get_start: AppCompatButton? = null
     private var chkByClick: CheckBox? = null
     lateinit var txt_start_privacy: MessagesTextView
@@ -44,20 +48,22 @@ class GetStartActivity : BaseActivity<ActivityGetStartBinding>(),
 
     private fun UIComponent() {
 
+
         chkByClick = binding.chkByClick
         chkByClick!!.setOnCheckedChangeListener(this)
         txt_start_privacy = binding.txtStartPrivacy
+        // Access the injected dependency
+        val user = userService.getUser()
+        txt_start_privacy.text = user
         btn_get_start = binding.btnGetStart
         btn_get_start!!.setBackgroundResource(R.drawable.button_continue)
         btn_get_start!!.setTextColor(ContextCompat.getColor(this, R.color.color_grey_dark))
-        btn_get_start!!.isEnabled = false
         txt_start_privacy!!.setOnClickListener(this)
         btn_get_start!!.setOnClickListener(this)
 
     }
 
     override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-        btn_get_start!!.isEnabled = isChecked
         btn_get_start!!.setBackgroundResource(if (isChecked) R.drawable.button_continue else R.drawable.button_continue_grey)
         btn_get_start!!.setTextColor(
             ContextCompat.getColor(

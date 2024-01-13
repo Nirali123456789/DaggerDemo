@@ -31,6 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
+
         android:id="@+id/chkByClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +44,7 @@
         android:text="@string/by_taaping"
         android:textColor="@color/textcolor2"
         android:textSize="13sp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:button="@drawable/check"
         app:layout_constraintBottom_toTopOf="@+id/btn_get_start"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,10 +52,12 @@
 
     <com.example.daggerdependancyinjectiondemo.ui.MessagesTextView
         android:id="@+id/txt_start_privacy"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="18dp"
         android:text="@string/privacy_policy"
+        android:gravity="center"
+        android:padding="5dp"
         android:textColor="@color/textcolor1"
         android:textSize="10sp"
         android:visibility="visible"
